@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Regola per evitare che i telefoni convertano in blu i numeri -->
     <meta name="format-detection" content="telephone=no">
+    
     <title>White Bar Restaurant - I Nostri Menu</title>
     
-    <!-- Importazione dei font per simulare lo stile del menu -->
+    <!-- Importazione Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -17,7 +20,15 @@
 <body>
     
     <div class="menu-container">
-        <!-- Intestazione che replica la copertina del tuo menu -->
+        
+        <!-- Interruttore Lingua (Bandierine) -->
+        <div class="lang-toggle">
+            <span id="btn-it" class="active" onclick="switchLang('it')">🇮🇹 IT</span>
+            <span style="opacity: 0.3; margin: 0 5px;">|</span>
+            <span id="btn-en" onclick="switchLang('en')">🇬🇧 EN</span>
+        </div>
+
+        <!-- Intestazione -->
         <header class="header">
             <h1 class="logo">White</h1>
             <h2 class="subtitle">BAR RESTAURANT - BISTROT</h2>
@@ -29,29 +40,51 @@
             </div>
         </header>
 
-        <!-- Sezione Pulsanti -->
+        <!-- Sezione Pulsanti (Bilingue) -->
         <main class="buttons-section">
-            <p class="instruction">Seleziona il menù che desideri consultare:</p>
+            <p class="instruction">
+                <span class="lang-text it">Seleziona il menù che desideri consultare:</span>
+                <span class="lang-text en" style="display: none;">Select the menu you wish to consult:</span>
+            </p>
             
-            <!-- IMPORTANTE: Usa i %20 al posto degli spazi per garantire la compatibilità su tutti i telefoni -->
-            <a href="menu%20white%20bar.pdf" class="btn">Menù Principale</a>
-            
-            <!-- Pulsante disattivato per un eventuale menu futuro -->
-            <!-- <a href="carta%20vini.pdf" class="btn">Carta dei Vini</a> -->
+            <a href="menu%20white%20bar.pdf" class="btn">
+                <span class="lang-text it">Menù Principale</span>
+                <span class="lang-text en" style="display: none;">Main Menu</span>
+            </a>
         </main>
 
-        <!-- Footer con i contatti presi dal retro del menu -->
-                <!-- Footer con i contatti e social cliccabili -->
+        <!-- Footer con i contatti e social cliccabili -->
         <footer class="footer">
             <p>Via del Tritone, 119 - Roma<br>
             Tel. <a href="tel:+390623481815" class="footer-link">06 2348 1815</a></p>
             
             <div class="socials">
                 <a href="https://www.instagram.com/white_barrestaurant/" target="_blank" class="footer-link">IG: @white_barrestaurant</a><br>
-                <a href="https://www.facebook.com/share/1F5qB6G7eL/?mibextid=wwXIfr" target="_blank" class="footer-link">FB: White bar & restaurant</a>
+                <a href="https://www.facebook.com/search/top?q=White%20bar%20%26%20restaurant" target="_blank" class="footer-link">FB: White bar & restaurant</a>
             </div>
         </footer>
     </div>
 
+    <!-- SCRIPT: Fa funzionare il cambio lingua in tempo reale -->
+    <script>
+        function switchLang(lang) {
+            // Accende/Spegne le bandierine in alto
+            document.getElementById('btn-it').classList.toggle('active', lang === 'it');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+            // Trova tutti i testi in italiano e in inglese
+            const itTexts = document.querySelectorAll('.lang-text.it');
+            const enTexts = document.querySelectorAll('.lang-text.en');
+
+            // Mostra la lingua scelta, nasconde l'altra
+            if (lang === 'it') {
+                itTexts.forEach(el => el.style.display = 'inline');
+                enTexts.forEach(el => el.style.display = 'none');
+            } else {
+                itTexts.forEach(el => el.style.display = 'none');
+                enTexts.forEach(el => el.style.display = 'inline');
+            }
+        }
+    </script>
 </body>
 </html>
