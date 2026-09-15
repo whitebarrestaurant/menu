@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Regola per evitare che i telefoni convertano in blu i numeri -->
     <meta name="format-detection" content="telephone=no">
-    
     <title>White Bar Restaurant - I Nostri Menu</title>
     
-    <!-- Importazione Font -->
+    <!-- Importazione Font Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Collegamento al foglio di stile -->
+    <!-- Libreria per i loghetti social (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
     <div class="menu-container">
         
-        <!-- Interruttore Lingua (Bandierine) -->
+        <!-- Interruttore Lingua -->
         <div class="lang-toggle">
             <span id="btn-it" class="active" onclick="switchLang('it')">🇮🇹 IT</span>
             <span style="opacity: 0.3; margin: 0 5px;">|</span>
             <span id="btn-en" onclick="switchLang('en')">🇬🇧 EN</span>
         </div>
 
-        <!-- Intestazione -->
+        <!-- Intestazione con il TUO LOGO -->
         <header class="header">
-            <h1 class="logo">White</h1>
+            <!-- Qui viene caricato il tuo logo.png -->
+            <img src="logo.png" alt="White Bar Restaurant Logo" class="img-logo">
             <h2 class="subtitle">BAR RESTAURANT - BISTROT</h2>
             
             <div class="quote-box">
@@ -40,7 +40,7 @@
             </div>
         </header>
 
-        <!-- Sezione Pulsanti (Bilingue) -->
+        <!-- Sezione Pulsanti -->
         <main class="buttons-section">
             <p class="instruction">
                 <span class="lang-text it">Seleziona il menù che desideri consultare:</span>
@@ -53,30 +53,30 @@
             </a>
         </main>
 
-        <!-- Footer con i contatti e social cliccabili -->
+        <!-- Footer con i contatti e i social con icone -->
         <footer class="footer">
             <p>Via del Tritone, 119 - Roma<br>
             Tel. <a href="tel:+390623481815" class="footer-link">06 2348 1815</a></p>
             
             <div class="socials">
-                <a href="https://www.instagram.com/white_barrestaurant/" target="_blank" class="footer-link">IG: @white_barrestaurant</a><br>
-                <a href="https://www.facebook.com/WhiteBarRestaurant" target="_blank" class="footer-link">FB: White bar & restaurant</a>
+                <a href="https://www.instagram.com/white_barrestaurant/" target="_blank" class="footer-link">
+                    <i class="fa-brands fa-instagram"></i> @white_barrestaurant
+                </a><br>
+                <a href="https://www.facebook.com/WhiteBarRestaurant" target="_blank" class="footer-link">
+                    <i class="fa-brands fa-facebook-f" style="margin-right: 3px;"></i> White bar & restaurant
+                </a>
             </div>
         </footer>
     </div>
 
-    <!-- SCRIPT: Fa funzionare il cambio lingua in tempo reale -->
     <script>
         function switchLang(lang) {
-            // Accende/Spegne le bandierine in alto
             document.getElementById('btn-it').classList.toggle('active', lang === 'it');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 
-            // Trova tutti i testi in italiano e in inglese
             const itTexts = document.querySelectorAll('.lang-text.it');
             const enTexts = document.querySelectorAll('.lang-text.en');
 
-            // Mostra la lingua scelta, nasconde l'altra
             if (lang === 'it') {
                 itTexts.forEach(el => el.style.display = 'inline');
                 enTexts.forEach(el => el.style.display = 'none');
