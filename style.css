@@ -1,10 +1,10 @@
 /* =========================================
-   PALETTE COLORI (Basata sulla copertina)
+   PALETTE COLORI
    ========================================= */
 :root {
-    --bg-dark: #2b2624; /* Marrone scurissimo/Testa di moro della copertina */
-    --text-white: #ffffff; /* Bianco per i testi principali */
-    --accent-gold: #d6c3a1; /* Color sabbia/oro preso dai bordi delle pagine interne */
+    --bg-dark: #2b2624;
+    --text-white: #ffffff;
+    --accent-gold: #d6c3a1;
 }
 
 /* =========================================
@@ -24,19 +24,42 @@ body {
 
 .menu-container {
     width: 100%;
-    max-width: 420px; /* Misura perfetta per schermi smartphone */
-    border: 1px solid var(--accent-gold); /* Richiama la cornice delle pagine interne */
+    max-width: 420px;
+    border: 1px solid var(--accent-gold);
     padding: 40px 20px;
     box-sizing: border-box;
     text-align: center;
-    position: relative;
+    position: relative; /* Serve per la bandierina in alto a destra */
+}
+
+/* =========================================
+   INTERRUTTORE LINGUA (Bandierine)
+   ========================================= */
+.lang-toggle {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 15px;
+    color: var(--accent-gold);
+    user-select: none;
+}
+
+.lang-toggle span {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+}
+
+/* Lingua attualmente selezionata */
+.lang-toggle span.active {
+    opacity: 1;
 }
 
 /* =========================================
    INTESTAZIONE & LOGO
    ========================================= */
 .logo {
-    font-family: 'Caveat', cursive; /* Simula il font scritto a mano del tuo logo */
+    font-family: 'Caveat', cursive;
     font-size: 75px;
     font-weight: 400;
     margin: 0;
@@ -89,7 +112,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 20px;
-    color: #a8a09b; /* Grigio chiaro per non distrarre */
+    color: #a8a09b;
 }
 
 .btn {
@@ -109,19 +132,18 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Effetto quando si clicca o si tocca il pulsante */
 .btn:hover, .btn:active {
     background-color: var(--text-white);
     color: var(--bg-dark);
 }
 
 /* =========================================
-   FOOTER (Contatti)
+   FOOTER (Contatti & Social)
    ========================================= */
 .footer {
     margin-top: 50px;
     padding-top: 20px;
-    border-top: 1px solid rgba(214, 195, 161, 0.2); /* Linea divisoria delicata */
+    border-top: 1px solid rgba(214, 195, 161, 0.2);
     font-size: 12px;
     font-weight: 300;
     line-height: 1.6;
@@ -132,14 +154,12 @@ body {
     margin: 0 0 15px 0;
 }
 
-.socials span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.footer-link {
-    color: var(--accent-gold); 
-    text-decoration: none; 
+/* IL FIX DEFINITIVO PER IL BLU DEL BROWSER */
+.footer a, 
+.footer-link,
+a[href^="tel"] {
+    color: var(--accent-gold) !important;
+    text-decoration: none !important;
     display: inline-block;
     margin-bottom: 5px;
     transition: opacity 0.2s;
