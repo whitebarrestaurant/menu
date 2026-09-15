@@ -1,0 +1,138 @@
+/* =========================================
+   PALETTE COLORI (Basata sulla copertina)
+   ========================================= */
+:root {
+    --bg-dark: #2b2624; /* Marrone scurissimo/Testa di moro della copertina */
+    --text-white: #ffffff; /* Bianco per i testi principali */
+    --accent-gold: #d6c3a1; /* Color sabbia/oro preso dai bordi delle pagine interne */
+}
+
+/* =========================================
+   IMPOSTAZIONI GLOBALI
+   ========================================= */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 420px; /* Misura perfetta per schermi smartphone */
+    border: 1px solid var(--accent-gold); /* Richiama la cornice delle pagine interne */
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+/* =========================================
+   INTESTAZIONE & LOGO
+   ========================================= */
+.logo {
+    font-family: 'Caveat', cursive; /* Simula il font scritto a mano del tuo logo */
+    font-size: 75px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 0.8;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+
+/* =========================================
+   CITAZIONE (FELLINI)
+   ========================================= */
+.quote-box {
+    margin-bottom: 40px;
+    color: var(--accent-gold);
+}
+
+.quote-it {
+    font-size: 14px;
+    font-weight: 500;
+    font-style: italic;
+    margin: 0 0 5px 0;
+}
+
+.quote-en {
+    font-size: 12px;
+    font-weight: 300;
+    font-style: italic;
+    margin: 0 0 10px 0;
+}
+
+.quote-author {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* =========================================
+   PULSANTI
+   ========================================= */
+.instruction {
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #a8a09b; /* Grigio chiaro per non distrarre */
+}
+
+.btn {
+    display: block;
+    background-color: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    border: 1px solid var(--text-white);
+    padding: 16px 20px;
+    margin: 0 auto 15px auto;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 85%;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Effetto quando si clicca o si tocca il pulsante */
+.btn:hover, .btn:active {
+    background-color: var(--text-white);
+    color: var(--bg-dark);
+}
+
+/* =========================================
+   FOOTER (Contatti)
+   ========================================= */
+.footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(214, 195, 161, 0.2); /* Linea divisoria delicata */
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--accent-gold);
+}
+
+.footer p {
+    margin: 0 0 15px 0;
+}
+
+.socials span {
+    display: block;
+    margin-bottom: 5px;
+}
