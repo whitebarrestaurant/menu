@@ -136,3 +136,15 @@ body {
     display: block;
     margin-bottom: 5px;
 }
+
+.footer-link {
+    color: var(--accent-gold); 
+    text-decoration: none; 
+    display: inline-block;
+    margin-bottom: 5px;
+    transition: opacity 0.2s;
+}
+
+.footer-link:hover, .footer-link:active {
+    opacity: 0.7;
+}
