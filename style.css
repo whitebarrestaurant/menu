@@ -58,19 +58,17 @@ body {
    INTESTAZIONE & LOGO IMMAGINE
    ========================================= */
 .img-logo {
-    width: 80%; /* Occupa l'80% dello spazio disponibile */
-    max-width: 250px; /* Non diventa mai troppo grande */
-    height: auto;
-    margin: 0 auto 15px auto;
-    display: block;
+    width: 100%;          /* Si adatta sempre allo schermo del telefono */
+    max-width: 220px;     /* LIMITE MASSIMO: Cambia questo numero (es. 180px o 250px) per regolarlo */
+    height: auto;         /* Mantiene le proporzioni intatte senza schiacciarlo */
+    margin: 0 auto 20px auto; /* Lo centra perfettamente al centro della pagina */
+    display: block;       /* Fondamentale per la centratura */
+    object-fit: contain;  /* Forza l'immagine a non uscire mai dai bordi */
 }
 
+/* (Puoi anche cancellare .subtitle se rimuovi il testo dal HTML come suggerito sotto) */
 .subtitle {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 3px;
-    margin-top: 10px;
-    margin-bottom: 35px;
+    display: none; 
 }
 
 /* =========================================
